@@ -1,4 +1,4 @@
-import React, { useRef} from 'react'
+import React, { useRef} from 'react';
 
 const ImageToggleOnMouseOver = (props) => {
   let renderedImg = props.primaryImg;
@@ -6,11 +6,11 @@ const ImageToggleOnMouseOver = (props) => {
 
   const handleMouseOver = (evt) => {
     imageRef.current.src = props.secondaryImg;
-  }
+  };
 
   const handleMouseOut = (evt) => {
     imageRef.current.src = props.primaryImg;
-  }
+  };
 
   return (
       <img 
@@ -20,7 +20,7 @@ const ImageToggleOnMouseOver = (props) => {
         onMouseOut={handleMouseOut} 
         alt='' 
       />
-  )
-}
+  );
+};
 
-export default ImageToggleOnMouseOver
+export default ImageToggleOnMouseOver;

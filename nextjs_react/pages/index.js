@@ -1,17 +1,17 @@
-import React, {useState} from 'react'
+import React, {useState} from 'react';
 
-const index = () => {
+const Index = () => {
   const [inputString, setInputString] = useState("");
-  const [historyList, setHistoryList] = useState([])
+  const [historyList, setHistoryList] = useState([]);
 
   const handleOnChange = (evt) => {
     setInputString(evt.target.value);
     setHistoryList([...historyList, evt.target.value]);
-  }
+  };
 
   const renderHistory = (list) => {
-    return list.map((elm, index) => <li key={index}>{elm}</li>)
-  } 
+    return list.map((elm, index) => <li key={index}>{elm}</li>);
+  }; 
 
   return (
     <div>
@@ -21,7 +21,7 @@ const index = () => {
         {renderHistory(historyList)}
       </ul>
     </div>
-  )
-}
+  );
+};
 
-export default index
+export default Index;

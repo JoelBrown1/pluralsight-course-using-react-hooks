@@ -1,27 +1,27 @@
-import React, { useEffect, useRef, useState} from 'react'
+import React, { useEffect, useRef, useState} from 'react';
 
 const ImageToggleOnScroll = (props) => {
   const imageRef = useRef(null);
   const [inView, setInView] = useState(false);
-  const [isLoading, setIsLoading] = useState(true)
+  const [isLoading, setIsLoading] = useState(true);
 
   const scrollHandler = () => {
     setInView(isInView());
-  }
+  };
 
   const isInView = () => {
     const rect = imageRef.current.getBoundingClientRect();
     return rect.top >= 0 && rect.bottom <= window.innerHeight;
-  }
+  };
 
   useEffect(() => {
     setIsLoading(false);
     setInView(isInView());
-    window.addEventListener('scroll', scrollHandler)
+    window.addEventListener('scroll', scrollHandler);
     return () => {
       window.removeEventListener('scroll', scrollHandler);
-    }
-  }, []) // empty array - only run when the component is mounted the first time
+    };
+  }, []); // empty array - only run when the component is mounted the first time
 
 
   return (
@@ -33,7 +33,7 @@ const ImageToggleOnScroll = (props) => {
           : props.primaryImg}  
         alt='' 
       />
-  )
-}
+  );
+};
 
-export default ImageToggleOnScroll
+export default ImageToggleOnScroll;
